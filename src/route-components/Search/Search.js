@@ -9,7 +9,7 @@ export class Search extends Component{
     render(){
         return(
             <section className="search-container">
-            
+                
             </section>
         )
     }
