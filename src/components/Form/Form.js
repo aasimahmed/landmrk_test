@@ -55,6 +55,9 @@ export class Form extends Component{
     }
 
     render(){ 
+
+        const displayCity = {display : `${this.state.active["city"] ? "block" : "none"}`};
+        const displayLonLat = {display : `${this.state.active["lonlat"] ? "block" : "none"}`};
         //check which form we are currently showing, whether its by City, by lon/lat.
         //need to autofill these in if user provides us with data through props.
 
@@ -62,12 +65,12 @@ export class Form extends Component{
         return(
             <form onSubmit={(e) => this.checkSubmission(e)}>
                 <Filter active={this.state.active} activeToggle={this.activeToggle}/>
-                <div className="search-city">
+                <div style={displayCity}className="search-city">
                 <h2>Search via city</h2>
                 <input type="text" placeholder="Search for a city" value={this.state.searchboxvalues.city} onChange={(e) => this.setSearchValues(e.target.name, e.target.value)} name="city"/>
                 </div>
                 
-                <div className="search-lonlat" >
+                <div style={displayLonLat} className="search-lonlat" >
                 <h2>Search via lon-lat</h2>
                 
                 <input type="text" placeholder="Enter your latitude" value={this.state.searchboxvalues.lat} onChange={(e) => this.setSearchValues(e.target.name, e.target.value)} name="lat"/>
