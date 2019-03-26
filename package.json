@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mapbox-gl": "^0.53.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
   },
   "scripts": {
@@ -21,5 +24,12 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-sass": "^4.0.2",
+    "prop-types": "^15.7.2"
+  }
 }
