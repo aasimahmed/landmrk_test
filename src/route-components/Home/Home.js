@@ -18,6 +18,7 @@ export const Home = () => {
             <div className="col-md-8 map-container">
                 <Map/>
             </div>
+            
         </section>
     )
     }

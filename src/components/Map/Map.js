@@ -15,21 +15,29 @@ export class Map extends Component {
         },
         dataSet : {
 
+        },
+        dataValues: {
+
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
 
-        fetch(`https://api.mapbox.com/tilesets/v1/aasimahmed?access_token=${mapbox_tiletoken}`)
-        .then(data => data.json())
-        .then(parsedData => this.setState({
-            dataSet : parsedData
-        }))
+        const dataVector = await fetch(`https://api.mapbox.com/tilesets/v1/aasimahmed?access_token=${mapbox_tiletoken}`)
+        const parsedDataVector = await dataVector.json();
+
+        const dataValues = await fetch(`https://api.mapbox.com/v4/aasimahmed.3b3gram9/tilequery/-2.5879,51.4545.json?radius=1000000&access_token=${mapbox_tiletoken}`)
+        const parsedDataValues = await dataValues.json();
+
+        this.setState({
+            dataSet: parsedDataVector,
+            dataValues: parsedDataValues.features
+        })
 
 
         this.map = new mapbox.Map({
             container: this.mapContainer,
-            style: 'mapbox://styles/mapbox/streets-v9',
+            style: "mapbox://styles/mapbox/light-v10",
             center: [this.state.user.long, this.state.user.lat],
             zoom: 10,    
         })
@@ -63,6 +71,9 @@ render() {
     const style = {
         width: "100%",
         height: "100%"
+    }
+    if(this.state.dataValues.length > 0){
+        
     }
 
 

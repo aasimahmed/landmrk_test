@@ -63,6 +63,8 @@ export class Form extends Component{
         //check which form we are currently showing, whether its by City, by lon/lat.
         //need to autofill these in if user provides us with data through props.
 
+        
+
 
         return(
             <form onSubmit={(e) => this.checkSubmission(e)}>
@@ -85,7 +87,9 @@ export class Form extends Component{
                     <input type="range" class="custom-range" id="formControlRange" min="0" max="100" name="range" value={this.state.searchboxvalues.range} onChange={(e) => this.setSearchValues(e.target.name, e.target.value)}></input>
                 </div>
                 <button className="btn btn-md btn-primary">Submit</button>
-
+                <div className="results-box">
+                {}
+                </div>
             </form>
         )
     }
