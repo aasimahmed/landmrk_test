@@ -10,7 +10,8 @@ export class Form extends Component{
         searchboxvalues: {
             city: "",
             lon : "",
-            lat : ""
+            lat : "",
+            range: 50
         },
         active : {
             city: true,
@@ -36,6 +37,7 @@ export class Form extends Component{
                 [inputName] : inputValue
             }
         })
+        console.log(inputName, inputValue)
         
     }
 
@@ -79,8 +81,8 @@ export class Form extends Component{
                 </div>
 
                 <div className="search-radius">
-                    <label htmlFor="formControlRange">How many miles</label>
-                    <input type="range" class="custom-range" id="formControlRange" min="0" max="100"></input>
+                    <label htmlFor="formControlRange">How many miles : <span>{this.state.searchboxvalues.range}</span></label>
+                    <input type="range" class="custom-range" id="formControlRange" min="0" max="100" name="range" value={this.state.searchboxvalues.range} onChange={(e) => this.setSearchValues(e.target.name, e.target.value)}></input>
                 </div>
                 <button className="btn btn-md btn-primary">Submit</button>
 

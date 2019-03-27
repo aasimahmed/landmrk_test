@@ -7,8 +7,8 @@ export const Filter = ({active, activeToggle}) => {
     return(
         <div className="row">
             <div className="col">
-            <button className={`btn btn-primary btn-lg ${active.city === true ? `active` : `` }`} name="city" onClick={(e) => activeToggle(e)}>Search by City</button>
-            <button className={`btn btn-primary btn-lg ${active.lonlat === true ? `active` : ``}`} name="lonlat" onClick={(e) => activeToggle(e)}>Search by Lon/lat</button>
+            <button className={`btn btn-success btn-md ${active.city === true ? `active` : `` }`} name="city" onClick={(e) => activeToggle(e)}>Search by City</button>
+            <button className={`btn btn-danger btn-md ${active.lonlat === true ? `active` : ``}`} name="lonlat" onClick={(e) => activeToggle(e)}>Search by Lon/lat</button>
             </div>
         </div>
 
